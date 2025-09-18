@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fazendeiro Pet</title>
+  <link rel="icon" href="./imagens/Gemini_Generated_Image_wmh79qwmh79qwmh7-removebg-preview.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="imagens/editar-removebg-preview.png" alt="Logo da clínica" class="logo-img">
+  </div>
+
+  <nav class="desktop" aria-label="Menu principal">
+    <div class="nav-item" data-target="inicio">Início</div>
+    <div class="nav-item" data-target="sobre">Sobre</div>
+    <div class="nav-item" data-target="procedimentos">Procedimentos</div>
+    <div class="nav-item" data-target="depoimentos">Depoimentos</div>
+  </nav>
+
+  <a class="contact-btn" href="https://wa.me/5561991686258?text=Ol%C3%A1!%20Poderia%20me%20ajudar%20com%20meu%20pet." target="_blank">Contato</a>
+
+
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu mobile">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+</header>
+
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="panel">
+    <div class="nav-item" data-target="inicio">Início</div>
+    <div class="nav-item" data-target="sobre">Sobre</div>
+    <div class="nav-item" data-target="procedimentos">Procedimentos</div>
+    <div class="nav-item" data-target="depoimentos">Depoimentos</div>
+    <div style="margin-top:18px"><button class="contact-btn" data-target="contact">Contato</button></div>
+  </div>
+</div>
+
+
+
+<!-- ========== INÍCIO ========== -->
+<section id="inicio">
+    <!-- VIDEO DE FUNDO -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./imagens/Criação_de_Vídeo_de_Patinhas_Animadas.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em background.
+    </video>
+
+    <!-- SOMBRA SOBRE O VÍDEO -->
+    <div class="video-shadow"></div>
+
+    <div class="section-inner">
+        <div class="left">
+        <h3>Seu pet é parte da sua família, e nós da <span>Fazendeiro Pet </span> cuidamos dele como se fosse parte da nossa. Com atendimento veterinário completo, com a dedicação e o afeto que ele merece.</h3>
+        <div class="counters">
+          <div class="counter-box">
+            <span id="count-procs">0</span>
+            <p>Procedimentos</p>
+          </div>
+          <div class="counter-box">
+            <span id="count-surgeries">0</span>
+            <p>Cirurgias</p>
+          </div>
+        </div>
+        </div>
+
+    <div class="right">
+      <div class="carousel" id="mainCarousel">
+        <img src="./imagens/petlove.jpg" alt="imagem 1" class="c-img" />
+        <img src="./imagens/gatinho.jpg" alt="imagem 2" class="c-img" />
+        <img src="./imagens/desenho.jpg" alt="imagem 3" class="c-img" />
+        
+        <div class="dots" id="mainDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOBRE ========== -->
+<section id="sobre">
+  <h2>Sobre</h2>
+  <div class="sobre-carousels">
+    <div class="carousel" id="sobreCarousel1">
+      <img src="https://picsum.photos/id/1020/800/500" alt="sobre1" />
+      <img src="https://picsum.photos/id/1011/800/500" alt="sobre2" style="opacity:0" />
+      <img src="https://picsum.photos/id/1012/800/500" alt="sobre3" style="opacity:0" />
+      <img src="https://picsum.photos/id/1013/800/500" alt="sobre4" style="opacity:0" />
+    </div>
+
+    <div class="carousel" id="sobreCarousel2">
+      <img src="https://picsum.photos/id/1021/800/500" alt="sobreA" />
+      <img src="https://picsum.photos/id/1022/800/500" alt="sobreB" style="opacity:0" />
+      <img src="https://picsum.photos/id/1023/800/500" alt="sobreC" style="opacity:0" />
+      <img src="https://picsum.photos/id/1024/800/500" alt="sobreD" style="opacity:0" />
+    </div>
+  </div>
+
+  <div class="mirror-box">
+    <h5>Somos uma clínica com amor pelos animais <br>atendimento carinhoso, equipe especializada e tecnologia <br>para cuidar do seu pet.</h5>
+  </div>
+</section>
+
+<!-- ========== PROCEDIMENTOS ========== -->
+<section id="procedimentos">
+  <h2>Procedimentos</h2>
+  <div class="proced-grid" id="procedGrid">
+    <div class="proc-card" data-title="Vacinas" data-body="Múltipla V8 ; Vacina contra pneumonia e gripe; Antirrábica; Quádrupla felina; Quíntupla felina e antirrábica"><strong>Vacinas</strong></div>
+    <div class="proc-card" data-title="Consultas com clínico geral" data-body="Atendimento clínico geral para cães e gatos."><strong>Consultas com clínico geral</strong></div>
+    <div class="proc-card" data-title="Consultas dermatologista" data-body="Problemas de pele; alergias e tratamentos."><strong>Consultas dermatologista</strong></div>
+    <div class="proc-card" data-title="Consultas endocrinologista" data-body="Distúrbios hormonais e metabólicos."><strong>Consultas endocrinologista</strong></div>
+    <div class="proc-card" data-title="Consultas neurologista" data-body="Problemas neurológicos e comportamento."><strong>Consultas neurologista</strong></div>
+    <div class="proc-card" data-title="Consultas odontologia" data-body="Cuidados odontológicos, limpezas e cirurgias bucais."><strong>Consultas odontologia</strong></div>
+    <div class="proc-card" data-title="Consultas oftalmologista" data-body="Exames e tratamentos oftalmológicos."><strong>Consultas oftalmologista</strong></div>
+    <div class="proc-card" data-title="Cirurgias em geral" data-body="Cirurgias de pequeno e médio porte."><strong>Cirurgias em geral</strong></div>
+    <div class="proc-card" data-title="Internação de cães e gatos" data-body="Internação com monitoramento e cuidados 24h."><strong>Internação</strong></div>
+    <div class="proc-card" data-title="Exames laboratoriais" data-body="Hematologia, bioquímica e outros exames."><strong>Exames laboratoriais</strong></div>
+    <div class="proc-card" data-title="Raio-x" data-body="Serviço de raio-x com laudo."><strong>Raio-x</strong></div>
+    <div class="proc-card" data-title="Ultrassonografia" data-body="Ultrassom abdominal, cardíaco etc."><strong>Ultrassonografia</strong></div>
+  </div>
+</section>
+
+<div class="overlay" id="procOverlay">
+  <div class="modal">
+    <button class="close-btn" id="procClose">Fechar</button>
+    <h3 id="procModalTitle">Título</h3>
+    <p id="procModalBody"></p>
+  </div>
+</div>
+
+<!-- ========== DEPOIMENTOS ========== -->
+<section id="depoimentos">
+    <!-- VIDEO DE FUNDO -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./imagens/Criação_de_Vídeo_de_Patinhas_Animadas.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em background.
+    </video>
+    <h2>Depoimentos</h2>
+    <div class="depo-wrapper">
+      
+      <div class="depo-item d1" data-index="1"><img src="./imagens/Depoimento_de_clientes_nude_aesthetic_story_do_instagram-removebg-preview.png" alt="depo1"></div>
+      <div class="depo-item d5" data-index="5"><img src="./imagens/Depoimento.png" alt="depo5"></div>
+      <div class="center-h3"><h3>O que nossos clientes dizem</h3></div>
+      <div class="depo-item d2" data-index="2"><img src="./imagens/Depoimento_de_clientes_nude_aesthetic_story_do_instagram__1_-removebg-preview.png" alt="depo2"></div>
+      <div class="depo-item d4" data-index="4"><img src="./imagens/Depoimento_de_clientes_nude_aesthetic_story_do_instagram__2_-removebg-preview.png" alt="depo4"></div>
+    </div>
+</section>
+
+<div class="gallery-overlay" id="gallery">
+  <div class="gallery-frame">
+    <button class="g-close" id="gClose">Fechar</button>
+    <div class="g-nav g-prev" id="gPrev">&#8249;</div>
+    <div class="g-nav g-next" id="gNext">&#8250;</div>
+    <div style="flex:1;text-align:center">
+      <img id="gImg" src="" alt="depoimento principal" />
+      <div class="gallery-caption" id="gCaption">Legenda</div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#procedimentos">Procedimentos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Redes sociais</h4>
+      <ul>
+        <li><a href="">Whatsapp</a></li>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Instagram</a></li>
+
+      </ul>
+    </div>
+    <div class="iframe">
+      <h4>Mapa</h4>
+      <p>Nesta parte quero colocar um mini mapa</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.9552890270006!2d-48.138270299999995!3d-15.8063114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd373a2923fb%3A0x587db49862ebdea5!2sClinica%20Veterin%C3%A1ria%20Fazendeiro%20Pet!5e0!3m2!1spt-PT!2sbr!4v1758232113089!5m2!1spt-PT!2sbr" width="450" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

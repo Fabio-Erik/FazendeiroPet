@@ -1,0 +1,797 @@
+:root {
+    --azul: #2B4C8C;
+}
+
+
+
+/* ========== RESET & BASE ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #f8fafc, #eef2f7);
+    color: #111;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+main {
+    padding-top: 90px
+}
+
+/* space for fixed header */
+
+/* ========== HEADER / NAV ========== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 10px;
+    background: var(--azul);
+    position: relative;
+}
+
+header .desktop {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    /* centraliza os itens do menu */
+    flex: 1;
+    /* ocupa o espaço entre logo e botão */
+}
+
+header .contact-btn {
+    flex: 0 0 auto;
+    /* botão no canto direito */
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+nav.desktop .nav-item {
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .18s ease, background-color .18s ease, color .18s;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* hover effect: grow + yellow */
+nav.desktop .nav-item:hover {
+    transform: scale(1.08);
+    color: #ffe66d;
+}
+
+.contact-btn {
+    background: #647cc2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    color: #fff;
+    background-color: #2cf504;
+}
+
+/* hamburger (mobile) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center
+}
+
+.hamburger .bar {
+    width: 22px;
+    height: 2px;
+    background: #111;
+    margin: 3px 0;
+    border-radius: 2px
+}
+
+/* mobile menu drawer */
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 1200;
+}
+
+.mobile-menu .panel {
+    width: 260px;
+    background: linear-gradient(180deg, #fff, #f7f7f7);
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu .panel .nav-item {
+    display: block;
+    padding: 12px 10px;
+    border-radius: 8px;
+    margin-bottom: 6px
+}
+
+/* show on small screens */
+@media (max-width:900px) {
+    header .desktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex
+    }
+}
+
+/* ========== INICIO (left: text+contadores, right: carousel) ========== */
+#inicio {
+    position: relative;
+    border-radius: 0;      /* remove borda arredondada */
+    overflow: hidden;
+    width: 100%;           /* ocupa toda a largura da tela */
+    margin: 0;              /* remove margem automática */
+    padding: 0;             /* remove padding */
+    min-height: 520px;      /* mantém altura mínima */
+}
+
+/* vídeo de fundo */
+.bg-video {
+  position: absolute;       /* fica fixo na tela */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -10;
+    pointer-events: none;
+}
+
+/* sombra sobre o vídeo */
+.video-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 8, 236, 0.781);
+    /* ajuste a intensidade aqui */
+    z-index: 1;
+    pointer-events: none;
+    /* não bloqueia cliques */
+}
+
+/* conteúdo acima da sombra */
+#inicio .section-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;              /* coloca os elementos lado a lado */
+    align-items: center;        /* centraliza verticalmente */
+    justify-content: space-between; /* espaço entre left e right */
+    gap: 30px;                  /* espaço entre eles */
+    padding: 40px;              /* dá um respiro interno */
+}
+
+
+#inicio .left {
+    margin-top: 100px;
+    flex: 1
+}
+
+#inicio .right {
+    margin-top: 30px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#inicio h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 14px
+}
+
+#inicio h3 span {
+    font-size: 25px;
+    color: #d3a518;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px
+}
+
+.counter {
+    background: rgba(252, 252, 252, 0.205);
+    backdrop-filter: blur(6px);
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
+    box-shadow: 0 6px 10px rgba(248, 248, 248, 0.384);
+}
+
+.counter-box {
+  flex: 1;         /* todos com a mesma proporção */
+  max-width: 250px; /* limite se quiser */
+  background: rgba(0,0,0,0.5); /* espelho opaco */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.counter-box span {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.counter-box p{ 
+     color: #fcbe03;
+    font-size: 1.1rem;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* carousel */
+.carousel {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.carousel img {
+    position: absolute; /* necessário para o carousel funcionar */
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%); /* centraliza a imagem */
+    width: auto;  /* mantém largura real */
+    height: auto; /* mantém altura real */
+    max-width: 100%;  /* não ultrapassa o container */
+    max-height: 100%; /* não ultrapassa o container */
+    display: block;
+    transition: opacity .6s ease;
+}
+
+
+.carousel .dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    display: flex;
+    gap: 6px
+}
+
+.carousel .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer
+}
+
+.carousel .dot.active {
+    background: #111
+}
+
+/* ========== SOBRE: two side-by-side carousels + mirror box ========== */
+#sobre {
+    position: relative;
+    background-image: url('./imagens/fundoSobre.JPG'); /* sua imagem de fundo */
+    background-size:100%;       /* cobre toda a seção */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat; /* evita repetição */
+    width:100% ;
+    background-attachment: fixed; /* efeito parallax */
+    padding: 60px 20px;
+    color: #fff;                  /* para destacar o texto */
+    height: 80%;
+}
+
+/* sombra escura para o texto ficar legível */
+#sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(126, 118, 245, 0.4);
+    z-index: 1;
+}
+
+/* conteúdo da seção acima da sombra */
+#sobre h2{
+    text-align: center;
+    font-size: 4rem;
+    color: yellow;
+    z-index: 99999;
+}
+.sobre-carousels,
+.mirror-box {
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-carousels {
+    display: flex;
+    gap: 16px
+}
+
+.sobre-carousels .carousel {
+    height: 220px;
+    flex: 1
+}
+
+.mirror-box {
+    position: relative;
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(32, 20, 202, 0.726);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+}
+
+/* brilho osso 1 e osso 2 usando before e after */
+.mirror-box::before,
+.mirror-box::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* primeira imagem */
+.mirror-box::before {
+    background-image: url('./imagens/osso.png');
+    animation: moveBone1 6s linear infinite;
+}
+
+/* segunda imagem */
+.mirror-box::after {
+    background-image: url('./imagens/pngwing.com.png');
+    animation: moveBone2 8s linear infinite;
+}
+
+/* mantém o texto acima das imagens */
+.mirror-box * {
+    position: relative;
+    z-index: 1;
+}
+
+/* animação osso 1 */
+@keyframes moveBone1 {
+    0%   { top: 0%; left: 0%; transform: rotate(0deg); opacity: 0.5; }
+    25%  { top: 20%; left: 80%; transform: rotate(90deg); opacity: 0.7; }
+    50%  { top: 80%; left: 60%; transform: rotate(180deg); opacity: 0.5; }
+    75%  { top: 60%; left: -10%; transform: rotate(270deg); opacity: 0.7; }
+    100% { top: 0%; left: 0%; transform: rotate(360deg); opacity: 0.5; }
+}
+
+/* animação osso 2 */
+@keyframes moveBone2 {
+    0%   { top: 100%; left: 20%; transform: rotate(0deg); opacity: 0.4; }
+    25%  { top: 60%; left: 70%; transform: rotate(120deg); opacity: 0.6; }
+    50%  { top: 20%; left: 50%; transform: rotate(240deg); opacity: 0.4; }
+    75%  { top: 40%; left: 0%; transform: rotate(360deg); opacity: 0.6; }
+    100% { top: 100%; left: 20%; transform: rotate(0deg); opacity: 0.4; }
+}
+
+
+
+.mirror-box h5 {
+    text-align: center;
+    color: #d3a518;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* yellow shine behind */
+.mirror-box::after {
+    content: "";
+    position: absolute;
+    left: -30%;
+    top: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(ellipse at center, rgba(255, 214, 98, 0.12) 0%, rgba(255, 214, 98, 0.0) 40%);
+    transform: translateX(-30%);
+    animation: shimmer 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-30%)
+    }
+
+    50% {
+        transform: translateX(10%)
+    }
+
+    100% {
+        transform: translateX(-30%)
+    }
+}
+
+/* ========== PROCEDIMENTOS: grid of translucent cards ========== */
+#procedimentos{
+    padding: 100px;
+
+    background-color: var(--azul);
+    height: 120%;
+}
+#procedimentos h2{
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+ 
+}
+
+.proc-card strong {
+    display: block;         /* garante que o texto ocupe a largura inteira do card */
+    text-align: center;     /* centraliza o texto */
+    color: #fff;         /* substitua pela cor que quiser */
+    font-size: 1.1rem;      /* opcional: ajusta o tamanho do texto */
+}
+
+
+.proced-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 18px
+}
+
+.proc-card {
+    padding: 16px;
+    border-radius: 12px;
+    background: #d3a518;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.proc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(255, 255, 254, 0.952)
+}
+
+/* modal overlay used by procedimentos */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    padding: 20px;
+}
+
+.overlay.open {
+    display: flex
+}
+
+.overlay .modal {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 22px;
+    position: relative;
+}
+
+.overlay .close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border: none;
+    background: #ff6b6b;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ========== DEPOIMENTOS: 6 squares with layout + gallery overlay ========== */
+
+#depoimentos {
+    position: relative;
+    border-radius: 0;      /* remove borda arredondada */
+    overflow: hidden;
+    width: 100%;           /* ocupa toda a largura da tela */
+    margin: 0;              /* remove margem automática */
+    padding: 0;             /* remove padding */
+    min-height: 520px;      /* mantém altura mínima */
+}
+#depoimentos h2{
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3rem;
+}
+
+.depo-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 120px 120px 120px;
+    gap: 14px;
+    align-items: center;
+    justify-items: center
+}
+
+
+.depo-wrapper {
+    position: relative;
+    height: 520px;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.depo-item {
+    position: absolute;
+    width: 170px;
+    height: 120px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25)
+}
+
+/* blue glow on hover */
+.depo-item:hover {
+    box-shadow: 0 14px 30px rgba(28, 138, 255, 0.623);
+    transform: translateY(-8px)
+}
+
+/* positions: numbering per your diagram */
+/* 6 */
+
+
+/* 1 */
+.d1 {
+    width: 200px;
+    height: 200px;
+    left: 6px;
+    top: 30px
+}
+
+/* 5 */
+.d5 {
+        width: 200px;
+    height: 200px;
+    right: 6px;
+    top: 30px
+}
+
+/* center h3 spot area */
+.center-h3 {
+    color: #fff;
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
+    text-align: center
+}
+
+.d2 {
+        width: 200px;
+    height: 200px;
+    left: 6px;
+    top: 260px
+}
+
+.d4 {
+        width: 200px;
+    height: 200px;
+    right: 6px;
+    top: 260px
+}
+
+
+
+/* small image placeholder inside */
+.depo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    display: block;
+    opacity: .9
+}
+
+/* gallery overlay for depoimentos */
+.gallery-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1600
+}
+
+.gallery-overlay.open {
+    display: flex
+}
+
+.gallery-frame {
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.gallery-frame img {
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto
+}
+
+.g-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: #ff6b6b;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.g-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #111;
+    background: rgba(255, 255, 255, 0.9);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.g-prev {
+    left: 10px
+}
+
+.g-next {
+    right: 10px
+}
+
+.gallery-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    color: #222;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px
+}
+
+/* ========== FOOTER ========== */
+footer {
+    padding: 28px;
+    background: linear-gradient(180deg, #0f1724, #071224);
+    color: #fff
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.footer-grid h4 {
+    text-align: center;
+    margin-bottom: 8px
+}
+
+.footer-grid ul {
+    list-style: none
+}
+
+.footer-grid li {
+    text-align: center;
+    padding: 6px 0;
+    opacity: 0.95
+}
+
+.footer-grid li:hover {
+    color: #d3a518;
+} 
+.footer-grid p {
+    text-align: center;
+    margin-bottom: 8px
+}
+
+@media (max-width:700px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 14px
+    }
+
+    .depo-wrapper {
+        height: 720px
+    }
+}
